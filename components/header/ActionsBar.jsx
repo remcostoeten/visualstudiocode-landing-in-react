@@ -1,5 +1,7 @@
 "use client"
 
+import { useRouter } from "next/navigation"
+
 import {
   Menubar,
   MenubarContent,
@@ -14,6 +16,13 @@ import styles from "../../styles/Actionsbar.module.css"
 import LogoIcon from "../icons/LogoFull"
 
 export default function ActionsBar() {
+  const router = useRouter()
+  let currentPage = router?.pathname?.replace("/", "") || ""
+
+  if (currentPage === "") {
+    currentPage = "homepage"
+  }
+
   return (
     <section className="flex items-center pl-1 text-white text-sm bg-topbar border-[#191d20] border-b h-[40px]">
       <span className="logo">
@@ -81,7 +90,7 @@ export default function ActionsBar() {
         </Menubar>
       </div>
       <p className="text-sm font- text-[#678ca6]">
-        homepage.jsx - Aspiring to be more than a divjesschuiver
+        {currentPage}.jsx - Aspiring to be more than a divjesschuiver
       </p>
       <div
         className={`${styles.windowButtons} flex space-x-2.5 justify-end pr-4`}

@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Remco Stoeten",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Remcostoeten.com - Remco Stoeten, a dutch 26 year old front-end engineer based in Lemmer, the Netherlands. P",
   mainNav: [
     {
       title: "Home",

@@ -1,9 +1,8 @@
 import "@/styles/globals.scss"
 import { Metadata } from "next"
-import { Fira_Code } from "next/font/google"
 
 import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
+import { FiraCode } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import ActionsBar from "@/components/header/ActionsBar"
 import { SiteHeader } from "@/components/site-header"
@@ -42,14 +41,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            "min-h-screen bg-background font-sans antialiased fira-code"
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <SiteHeader />
             <ActionsBar />
-            <div className="relative flex min-h-screen">
+            <div className="relative flex min-h-screen bg-body">
               <Sidebar />
               <ExploreAside />
               <div className="flex-1">{children}</div>

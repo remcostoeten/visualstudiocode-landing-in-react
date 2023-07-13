@@ -72,7 +72,7 @@ const BigAside = () => {
                 height={18}
                 width={18}
               />{" "}
-              <p>{item.name}</p>
+              <p className="ml-2">{item.name}</p>
             </div>
           </Link>
         ))}

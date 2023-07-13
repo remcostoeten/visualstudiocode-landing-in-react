@@ -80,7 +80,7 @@ export default function ActionsBar() {
           </MenubarMenu>
         </Menubar>
       </div>
-      <p className="text-xs font-light text-[#678ca6]">
+      <p className="text-sm font- text-[#678ca6]">
         homepage.jsx - Aspiring to be more than a divjesschuiver
       </p>
       <div

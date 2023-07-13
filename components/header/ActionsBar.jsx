@@ -15,7 +15,7 @@ import LogoIcon from "../icons/LogoFull"
 
 export default function ActionsBar() {
   return (
-    <section className="flex items-center pl-1 text-white text-sm bg-topbar border-[#191d20] border-b h-[30px]">
+    <section className="flex items-center pl-1 text-white text-sm bg-topbar border-[#191d20] border-b h-[40px]">
       <span className="logo">
         <LogoIcon />
       </span>
@@ -35,10 +35,53 @@ export default function ActionsBar() {
               <MenubarItem>Print</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Edit</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>New Window</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Share</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Print</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>View</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                No this is <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>NextJs</MenubarItem>
+              <MenubarSeparator />
+              <MenubarItem>Not Vue(iew)</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Run</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                Forest <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>Run</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
+          <MenubarMenu>
+            <MenubarTrigger>Help</MenubarTrigger>
+            <MenubarContent>
+              <MenubarItem>
+                We all <MenubarShortcut>⌘T</MenubarShortcut>
+              </MenubarItem>
+              <MenubarItem>Need help</MenubarItem>
+              <MenubarItem>Buddy</MenubarItem>
+            </MenubarContent>
+          </MenubarMenu>
         </Menubar>
       </div>
-      <p className={styles.title}>
-        Remco Stoeten - Aspiring to be more than a divjesschuiver.
+      <p className="text-xs font-light text-[#678ca6]">
+        homepage.jsx - Aspiring to be more than a divjesschuiver
       </p>
       <div
         className={`${styles.windowButtons} flex space-x-2.5 justify-end pr-4`}

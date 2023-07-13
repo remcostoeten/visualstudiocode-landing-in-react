@@ -44,40 +44,38 @@ const BigAside = () => {
   const [portfolioOpen, setPortfolioOpen] = useState(true)
 
   return (
-    <div className={styles.bigAside}>
-      <div>
-        <input
-          type="checkbox"
-          className={styles.checkbox}
-          id="portfolio-checkbox"
-          checked={portfolioOpen}
-          onChange={() => setPortfolioOpen(!portfolioOpen)}
+    <div class="BigAside bg-explorer-bg w-18vw text-gray-200 font-source-sans-pro border-r border-explorer-border pl-2">
+      <input
+        type="checkbox"
+        className={styles.checkbox}
+        id="portfolio-checkbox"
+        checked={portfolioOpen}
+        onChange={() => setPortfolioOpen(!portfolioOpen)}
+      />
+      <label htmlFor="portfolio-checkbox" className={styles.heading}>
+        <ChevronRight
+          className="mr-1 transition-transform duration-200"
+          style={portfolioOpen ? { transform: "rotate(90deg)" } : {}}
         />
-        <label htmlFor="portfolio-checkbox" className={styles.heading}>
-          <ChevronRight
-            className={styles.chevron}
-            style={portfolioOpen ? { transform: "rotate(90deg)" } : {}}
-          />
-          Portfolio
-        </label>
-        <div
-          className={styles.files}
-          style={portfolioOpen ? { display: "block" } : { display: "none" }}
-        >
-          {bigAsideItems.map((item) => (
-            <Link href={item.path} key={item.name}>
-              <div className={styles.file}>
-                <Image
-                  src={`/${item.icon}`}
-                  alt={item.name}
-                  height={18}
-                  width={18}
-                />{" "}
-                <p>{item.name}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        Portfolio
+      </label>
+      <div
+        className={styles.files}
+        style={portfolioOpen ? { display: "block" } : { display: "none" }}
+      >
+        {bigAsideItems.map((item) => (
+          <Link href={item.path} key={item.name}>
+            <div className={styles.file}>
+              <Image
+                src={`/${item.icon}`}
+                alt={item.name}
+                height={18}
+                width={18}
+              />{" "}
+              <p>{item.name}</p>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   )

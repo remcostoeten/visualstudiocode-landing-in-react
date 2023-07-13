@@ -1,11 +1,3 @@
-.BigAside {
-  background: var(--explorer-bg);
-  width: 18vw;
-  color: rgb(225, 228, 232);
-  font-family: "Source Sans Pro", sans-serif;
-  border-right: 1px solid var(--explorer-border);
-}
-
 .title {
   padding: 0.5rem 0.75rem;
   font-weight: 300;
@@ -50,26 +42,4 @@
 
 .file:hover {
   background: var(--explorer-hover-bg);
-}
-
-.chevron {
-  transition: transform 0.2s;
-}
-
-@media screen and (min-width: 2000px) {
-  .BigAside {
-    width: 10vw;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .BigAside {
-    width: 20vw;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .BigAside {
-    display: none;
-  }
 }

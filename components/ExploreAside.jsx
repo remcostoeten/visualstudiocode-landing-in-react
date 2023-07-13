@@ -7,8 +7,8 @@ export default function ExploreAside() {
   return (
     <aside className="w-[290px] h-screen bg-nav ">
       <Explorer />
-      <div className="bg-navDark pt-3 pl-7 p-6">
-        <h6 className="text-bold text-sm text-[#818ca6] ">
+      <div className="bg-navDark pt-3 p-5 mb-4">
+        <h6 className="font-bold text-sm text-[#818ca6] ">
           remcostoeten portfolio
         </h6>
       </div>

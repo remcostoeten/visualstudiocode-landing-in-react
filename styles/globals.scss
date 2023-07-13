@@ -1,6 +1,7 @@
 @import "./utils/variables.scss";
 @import "./radix/dropdown.css";
 @import "./radix/custom-overrule.scss";
+@import "./tailwind/custom.scss";
 
 @tailwind base;
 @tailwind components;

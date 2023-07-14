@@ -1,9 +1,10 @@
-import styles from "../../styles/module/Tabsbar.module.css"
+import styles from "@/styles/modules/Tabsbar.module.css"
+
 import Tab from "./Tab"
 
 const Tabsbar = () => {
   return (
-    <div className={styles.tabs}>
+    <div className="flex bg-[#191a21] w-screen">
       <Tab icon="/react_icon.svg" filename="home.jsx" path="/" />
       <Tab icon="/html_icon.svg" filename="about.html" path="/about" />
       <Tab icon="/css_icon.svg" filename="contact.css" path="/contact" />

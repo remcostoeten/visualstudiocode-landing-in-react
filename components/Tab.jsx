@@ -1,8 +1,10 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
-import styles from "../../styles/module/Tab.module.css"
+import styles from "@/styles/modules/Tab.module.css"
 
 const Tab = ({ icon, filename, path }) => {
   const router = useRouter()

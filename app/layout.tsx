@@ -12,6 +12,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import ExploreAside from "./../components/ExploreAside"
 import Sidebar from "./../components/Sidebar"
+import Tabsbar from "./../components/Tabsbar"
 
 export const metadata: Metadata = {
   title: {
@@ -41,12 +42,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
               "min-h-screen bg-background font-sans antialiased fira-code"
             )}
           >
-            {" "}
             <SiteHeader />
             <ActionsBar />
             <div className="relative flex min-h-screen bg-body">
               <Sidebar />
               <ExploreAside />
+              <div style={{ width: "100%" }}>
+                <Tabsbar />
+                <main className="p-2 flex-1 h-[85vh]">{children}</main>
+              </div>
               <div className="flex-1">{children}</div>
             </div>
           </body>

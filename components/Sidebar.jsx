@@ -46,7 +46,7 @@ const sidebarBottomItems = [
   },
 ]
 
-const Sidebar = () => {
+export default function Sidebar() {
   const router = useRouter()
 
   return (
@@ -73,8 +73,8 @@ const Sidebar = () => {
       </div>
       <div className={styles.sidebarBottom}>
         {sidebarBottomItems.map(({ Icon, path }) => (
-          <div className={styles.iconContainer}>
-            <Link href={path} key={path}>
+          <div className={styles.iconContainer} key={path}>
+            <Link href={path}>
               <Icon
                 fill={
                   router.pathname === path
@@ -90,5 +90,3 @@ const Sidebar = () => {
     </aside>
   )
 }
-
-export default Sidebar

@@ -44,7 +44,7 @@ const BigAside = () => {
   const [portfolioOpen, setPortfolioOpen] = useState(true)
 
   return (
-    <div class="BigAside bg-explorer-bg w-18vw text-gray-200 font-source-sans-pro border-r border-explorer-border pl-2">
+    <div className="BigAside bg-explorer-bg w-18vw text-gray-200 font-source-sans-pro border-r border-explorer-border pl-2">
       <input
         type="checkbox"
         className={styles.checkbox}

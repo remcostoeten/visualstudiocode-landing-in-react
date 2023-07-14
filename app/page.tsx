@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { UserButton } from "@clerk/nextjs"
 
 import Illustration from "../components/icons/Illustrations"
 import styles from "../styles/modules/Homepage.module.css"
@@ -29,10 +30,4 @@ export default function HomePage() {
       </div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  return {
-    props: { title: "Home" },
-  }
 }

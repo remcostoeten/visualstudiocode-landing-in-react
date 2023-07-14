@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
+import { SignIn, SignInButton } from "@clerk/nextjs"
 
 import {
   Menubar,
@@ -78,13 +79,11 @@ export default function ActionsBar() {
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
-            <MenubarTrigger>Help</MenubarTrigger>
+            <MenubarTrigger>Sign in</MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                We all <MenubarShortcut>⌘T</MenubarShortcut>
+                <SignIn />
               </MenubarItem>
-              <MenubarItem>Need help</MenubarItem>
-              <MenubarItem>Buddy</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         </Menubar>

@@ -84,51 +84,51 @@ const MyComponent = () => (
       <h1>
         Awesome animated cursor
         <br /> with{" "}
-        <a href="https://reactjs.org/docs/hooks-intro.html" target="_blank">
+        <a href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noreferrer">
           React Hooks
         </a>
       </h1>
       <p>
         <b>HIP 65426 b</b> is a{" "}
-        <a href="https://en.wikipedia.org/wiki/Super-Jupiter" target="_blank">
+        <a href="https://en.wikipedia.org/wiki/Super-Jupiter" target="_blank" rel="noreferrer">
           super Jupiter
         </a>{" "}
-        <a href="https://en.wikipedia.org/wiki/Exoplanet" target="_blank">
+        <a href="https://en.wikipedia.org/wiki/Exoplanet" target="_blank" rel="noreferrer">
           exoplanet
         </a>{" "}
         orbiting the{" "}
-        <a href="https://en.wikipedia.org/wiki/Star" target="_blank">
+        <a href="https://en.wikipedia.org/wiki/Star" target="_blank" rel="noreferrer">
           star
         </a>{" "}
         <a
           href="https://en.wikipedia.org/w/index.php?title=HIP_65426&amp;action=edit&amp;redlink=1"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           HIP 65426
         </a>
         . It was discovered on 6 July 2017 by the{" "}
         <a
           href="https://en.wikipedia.org/wiki/Max_Planck_Institute_for_Astronomy"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           Max Planck Institute for Astronomy
         </a>{" "}
         using the{" "}
         <a
           href="https://en.wikipedia.org/wiki/Spectro-Polarimetric_High-Contrast_Exoplanet_Research"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           Spectro-Polarimetric High-Contrast Exoplanet Research
         </a>{" "}
         (SPHERE) instrument belonging to the{" "}
         <a
           href="https://en.wikipedia.org/wiki/European_Southern_Observatory"
-          target="_blank"
+          target="_blank" rel="noreferrer"
         >
           European Southern Observatory
         </a>{" "}
         (ESO). It is 385{" "}
-        <a href="https://en.wikipedia.org/wiki/Light-year" target="_blank">
+        <a href="https://en.wikipedia.org/wiki/Light-year" target="_blank" rel="noreferrer">
           light-years
         </a>{" "}
         from Earth. It is the first planet discovered by ESO's SPHERE
@@ -136,7 +136,7 @@ const MyComponent = () => (
       </p>
       <p>
         * text from{" "}
-        <a href="https://en.wikipedia.org/wiki/HIP_65426_b" target="_blank">
+        <a href="https://en.wikipedia.org/wiki/HIP_65426_b" target="_blank" rel="noreferrer">
           Wikipedia
         </a>
       </p>

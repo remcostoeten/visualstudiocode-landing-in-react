@@ -29,7 +29,11 @@ const BigAside = () => {
         checked={portfolioOpen}
         onChange={() => setPortfolioOpen(!portfolioOpen)}
       />
-      <label htmlFor="portfolio-checkbox" className={styles.heading}>
+      <label
+        htmlFor="portfolio-checkbox"
+        className={styles.heading}
+        cursorIncreaseSize="true"
+      >
         <ChevronRight
           className="mr-1 transition-transform duration-200"
           style={portfolioOpen ? { transform: "rotate(90deg)" } : {}}

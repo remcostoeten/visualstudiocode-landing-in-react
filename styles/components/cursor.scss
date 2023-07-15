@@ -1,0 +1,19 @@
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fefefe;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 333ms ease, height 333ms ease-in-out;
+  mix-blend-mode: difference;
+}
+
+* {
+  cursor: none;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}

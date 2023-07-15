@@ -67,6 +67,9 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      borderRadius: {
+        cursor: "100%",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -76,6 +79,18 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+      },
+      transitionProperty: {
+        cursor: "background-color, transform, width, height",
+      },
+      transitionDuration: {
+        2000: "0",
+      },
+      height: {
+        cursor: "2.5rem",
+      },
+      width: {
+        cursor: "2.5rem",
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -116,6 +131,7 @@ module.exports = {
         themeblue: "#2e304b",
         themered: "#fd8e8e",
         offblack: "#111215",
+        cursor: "#ffffff",
         offwhite: "#ebecf3",
         themegreen: "#0aff9d",
         themeorange: "#fc6d26",

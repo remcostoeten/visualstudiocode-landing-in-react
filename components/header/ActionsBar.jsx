@@ -19,6 +19,11 @@ import LogoIcon from "../icons/LogoFull"
 export default function ActionsBar() {
   const router = useRouter()
   let currentPage = router?.pathname?.replace("/", "") || ""
+
+  if (currentPage === "") {
+    currentPage = "homepage"
+  }
+
   return (
     <section className="flex h-[40px] items-center border-b border-[#191d20] bg-topbar pl-1 text-sm text-white">
       <span className="logo">

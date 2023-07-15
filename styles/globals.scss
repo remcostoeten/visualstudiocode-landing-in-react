@@ -4,6 +4,7 @@
 @import "./tailwind/custom.scss";
 @import "./pages/404.scss";
 @import "./lib/resize.scss";
+@import "./components/cursor.scss";
 
 @tailwind base;
 @tailwind components;
@@ -32,6 +33,10 @@
   --scrollbar-track-bg: #282a36;
   --scrollbar-thumb-bg: #454647;
   --article-bg: #21222c;
+}
+
+html {
+  font-size: 22px;
 }
 
 .bg-black {

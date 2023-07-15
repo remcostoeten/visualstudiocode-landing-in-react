@@ -8,7 +8,7 @@ export default function NotFound() {
   const goBack = () => Router.back()
   return (
     <>
-      <div className="error-page absolute left-0 top-0 w-screen h-screen opacity-90">
+      <div className="error-page absolute left-0 top-0 h-screen w-screen opacity-90">
         <div className="noise"></div>
         <div className="overlay"></div>
         <div className="terminal">

@@ -39,17 +39,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <html lang="en">
           <body
             className={cn(
-              "min-h-screen bg-background font-sans antialiased fira-code"
+              "bg-background fira-code min-h-screen font-sans antialiased"
             )}
           >
             <SiteHeader />
             <ActionsBar />
             <div className="relative flex min-h-screen bg-body">
-              <Sidebar />
-              <ExploreAside />
+              <div className="flex">
+                <Sidebar />
+                <ExploreAside />
+              </div>
               <div style={{ width: "100%" }}>
                 <Tabsbar />
-                <main className="p-2 flex-1 h-[85vh]">{children}</main>
+                <main className="h-[85vh] flex-1 p-2">{children}</main>
               </div>
               <div className="flex-1">{children}</div>
             </div>

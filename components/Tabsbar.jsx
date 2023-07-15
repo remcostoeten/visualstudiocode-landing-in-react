@@ -4,7 +4,7 @@ import Tab from "./Tab"
 
 const Tabsbar = () => {
   return (
-    <div className="flex bg-[#191a21] w-screen">
+    <div className="flex w-screen bg-[#191a21]">
       <Tab icon="/react_icon.svg" filename="home.jsx" path="/" />
       <Tab icon="/html_icon.svg" filename="about.html" path="/about" />
       <Tab icon="/css_icon.svg" filename="contact.css" path="/contact" />

@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import { SignIn } from "@clerk/nextjs"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
@@ -26,7 +27,7 @@ export function MainNav({ items }: MainNavProps) {
                   key={index}
                   href={item.href}
                   className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
+                    "text-muted-foreground flex items-center text-sm font-medium",
                     item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >

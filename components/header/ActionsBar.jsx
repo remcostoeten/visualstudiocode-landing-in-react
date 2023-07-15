@@ -1,6 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
+import { ClerkProvider, SignIn, SignedOut, useUser } from "@clerk/nextjs"
 
 import {
   Menubar,
@@ -18,17 +19,11 @@ import LogoIcon from "../icons/LogoFull"
 export default function ActionsBar() {
   const router = useRouter()
   let currentPage = router?.pathname?.replace("/", "") || ""
-
-  if (currentPage === "") {
-    currentPage = "homepage"
-  }
-
   return (
-    <section className="flex items-center pl-1 text-white text-sm bg-topbar border-[#191d20] border-b h-[40px]">
+    <section className="flex h-[40px] items-center border-b border-[#191d20] bg-topbar pl-1 text-sm text-white">
       <span className="logo">
         <LogoIcon />
       </span>
-
       <div className={styles.items}>
         <Menubar>
           <MenubarMenu>
@@ -78,25 +73,25 @@ export default function ActionsBar() {
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
-            <MenubarTrigger>Help</MenubarTrigger>
+            {/* if signed in logic */}
+
+            <MenubarTrigger>Sign in</MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
-                We all <MenubarShortcut>⌘T</MenubarShortcut>
+                <SignIn />
               </MenubarItem>
-              <MenubarItem>Need help</MenubarItem>
-              <MenubarItem>Buddy</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
       </div>
-      <p className="text-sm font- text-[#678ca6]">
+      <p className="font- text-sm text-[#678ca6]">
         {currentPage}.jsx - Aspiring to be more than a divjesschuiver
       </p>
       <div
-        className={`${styles.windowButtons} flex space-x-2.5 justify-end pr-4`}
+        className={`${styles.windowButtons} flex justify-end space-x-2.5 pr-4`}
       >
         <span className="bg-[#50fa7b]"></span>
-        <span className="bg-[#f1fa8c] ml-auto"></span>
+        <span className="ml-auto bg-[#f1fa8c]"></span>
         <span className="bg-[#ff5555]"></span>
       </div>
     </section>

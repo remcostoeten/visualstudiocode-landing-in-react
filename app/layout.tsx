@@ -1,12 +1,9 @@
-"use client"
-
 import "@/styles/globals.scss"
 import React from "react"
 import { Metadata } from "next"
-import { useSelectedLayoutSegments } from "next/navigation"
+import { ClerkProvider } from "@clerk/nextjs"
 
 import { siteConfig } from "@/config/site"
-import { FiraCode } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import ActionsBar from "@/components/header/ActionsBar"
 import { SiteHeader } from "@/components/site-header"
@@ -15,6 +12,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 import ExploreAside from "./../components/ExploreAside"
 import Sidebar from "./../components/Sidebar"
+import Tabsbar from "./../components/Tabsbar"
 
 export const metadata: Metadata = {
   title: {
@@ -22,10 +20,6 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -39,36 +33,31 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  const segments = useSelectedLayoutSegments()
-  const isNotFound = segments.includes("not-found")
-
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased fira-code"
-          )}
-        >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {isNotFound ? (
-              <h1>not found</h1>
-            ) : (
-              <>
-                <SiteHeader />
-                <ActionsBar />
-                <div className="relative flex min-h-screen bg-body">
-                  <Sidebar />
-                  <ExploreAside />
-                  <div className="flex-1">{children}</div>
-                </div>
-              </>
+      <ClerkProvider>
+        <html lang="en">
+          <body
+            className={cn(
+              "bg-background fira-code min-h-screen font-sans antialiased"
             )}
-            <TailwindIndicator />
-          </ThemeProvider>
-        </body>
-      </html>
+          >
+            <SiteHeader />
+            <ActionsBar />
+            <div className="relative flex min-h-screen bg-body">
+              <div className="flex">
+                <Sidebar />
+                <ExploreAside />
+              </div>
+              <div style={{ width: "100%" }}>
+                <Tabsbar />
+                <main className="h-[85vh] flex-1 p-2">{children}</main>
+              </div>
+              <div className="flex-1">{children}</div>
+            </div>
+          </body>
+        </html>
+      </ClerkProvider>
     </>
   )
 }

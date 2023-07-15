@@ -1,16 +1,14 @@
 "use client"
 
-import { useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function NotFound() {
-  const historyBack = () => {
-    window.history.back()
-  }
-
+  const Router = useRouter()
+  const goBack = () => Router.back()
   return (
     <>
-      <div className="error-page absolute left-0 top-0 w-screen h-screen opacity-90">
+      <div className="error-page absolute left-0 top-0 h-screen w-screen opacity-90">
         <div className="noise"></div>
         <div className="overlay"></div>
         <div className="terminal">
@@ -27,12 +25,11 @@ export default function NotFound() {
           a
           <p className="output">
             Please try to{" "}
-            <Link href="#" onClick={historyBack}>
+            <Link href="#" onClick={goBack}>
               go back
             </Link>{" "}
-            or <Link href="#2">return to the homepage</Link>.
+            or <Link href="/">return to the homepage</Link>.
           </p>
-          <p className="output"> </p>
         </div>
       </div>
     </>

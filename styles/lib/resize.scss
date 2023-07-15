@@ -1,0 +1,24 @@
+.resize-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.resize-wrapper .react-resizable-handle {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 10px;
+  height: 100%;
+  cursor: ew-resize;
+  z-index: 1;
+}
+
+.resize-wrapper .react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+}

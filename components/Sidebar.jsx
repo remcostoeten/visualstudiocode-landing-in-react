@@ -38,7 +38,7 @@ const sidebarTopItems = [
 const sidebarBottomItems = [
   {
     Icon: AccountIcon,
-    path: "/about",
+    path: "/cursor",
   },
   {
     Icon: SettingsIcon,
@@ -46,12 +46,12 @@ const sidebarBottomItems = [
   },
 ]
 
-const Sidebar = () => {
+export default function Sidebar() {
   const router = useRouter()
 
   return (
-    <aside className={styles.sidebar}>
-      <div className={styles.sidebarTop}>
+    <aside className="flex flex-col">
+      <div className="flex grow flex-col">
         {sidebarTopItems.map(({ Icon, path }) => (
           <Link href={path} key={path}>
             <div
@@ -71,10 +71,10 @@ const Sidebar = () => {
           </Link>
         ))}
       </div>
-      <div className={styles.sidebarBottom}>
+      <div className="flex flex-col">
         {sidebarBottomItems.map(({ Icon, path }) => (
-          <div className={styles.iconContainer}>
-            <Link href={path} key={path}>
+          <div className={styles.iconContainer} key={path}>
+            <Link href={path}>
               <Icon
                 fill={
                   router.pathname === path
@@ -90,5 +90,3 @@ const Sidebar = () => {
     </aside>
   )
 }
-
-export default Sidebar

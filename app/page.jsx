@@ -1,7 +1,27 @@
+"use client"
+
 import Link from "next/link"
+import { UserButton } from "@clerk/nextjs"
+import { faker } from "@faker-js/faker"
+import { Prisma } from "@prisma/client"
 
 import Illustration from "../components/icons/Illustrations"
 import styles from "../styles/modules/Homepage.module.css"
+
+const addData = async () => {
+  Array.from({ length: 10 }, (_, i) => i + 1).map(async (i) => {
+    await Prisma.customer.create({
+      data: {
+        name: faker.company.name(),
+        email: faker.internet.email(),
+      },
+    })
+  })
+}
+
+const testClick = () => {
+  console.log("test")
+}
 
 export default function HomePage() {
   return (
@@ -29,10 +49,4 @@ export default function HomePage() {
       </div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  return {
-    props: { title: "Home" },
-  }
 }

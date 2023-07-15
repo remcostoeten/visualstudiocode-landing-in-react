@@ -4,47 +4,24 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-import styles from "../../styles/BigAside.module.css"
-import ChevronRight from "../icons/ChevronRight"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
-const bigAsideItems = [
-  {
-    name: "home.jsx",
-    path: "/",
-    icon: "react_icon.svg",
-  },
-  {
-    name: "about.html",
-    path: "/about",
-    icon: "html_icon.svg",
-  },
-  {
-    name: "contact.css",
-    path: "/contact",
-    icon: "css_icon.svg",
-  },
-  {
-    name: "projects.js",
-    path: "/projects",
-    icon: "js_icon.svg",
-  },
-  {
-    name: "articles.json",
-    path: "/articles",
-    icon: "json_icon.svg",
-  },
-  {
-    name: "github.md",
-    path: "/github",
-    icon: "markdown_icon.svg",
-  },
-]
+import styles from "../../styles/BigAside.module.css"
+import menuLinks from "../header/menuLinks"
+import ChevronRight from "../icons/ChevronRight"
 
 const BigAside = () => {
   const [portfolioOpen, setPortfolioOpen] = useState(true)
 
   return (
-    <div class="BigAside bg-explorer-bg w-18vw text-gray-200 font-source-sans-pro border-r border-explorer-border pl-2">
+    <div className="BigAside bg-explorer-bg w-18vw pl-2 text-gray-200">
       <input
         type="checkbox"
         className={styles.checkbox}
@@ -63,19 +40,48 @@ const BigAside = () => {
         className={styles.files}
         style={portfolioOpen ? { display: "block" } : { display: "none" }}
       >
-        {bigAsideItems.map((item) => (
-          <Link href={item.path} key={item.name}>
-            <div className={styles.file}>
-              <Image
-                src={`/${item.icon}`}
-                alt={item.name}
-                height={18}
-                width={18}
-              />{" "}
-              <p className="ml-2">{item.name}</p>
-            </div>
-          </Link>
-        ))}
+        {menuLinks.map((item) => {
+          if (item.isDropdown) {
+            return (
+              <DropdownMenu key={item.name}>
+                <DropdownMenuTrigger>
+                  <div className={styles.file}>
+                    <Image
+                      src={`/${item.icon}`}
+                      alt={item.name}
+                      height={18}
+                      width={18}
+                    />
+                    <p className="ml-2">{item.name}</p>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {item.dropdownItems.map((dropdownItem) => (
+                    <DropdownMenuItem key={dropdownItem.name}>
+                      <Link href={dropdownItem.path}>
+                        <p>{dropdownItem.name}</p>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )
+          } else {
+            return (
+              <Link href={item.path} key={item.name}>
+                <div className={styles.file}>
+                  <Image
+                    src={`/${item.icon}`}
+                    alt={item.name}
+                    height={18}
+                    width={18}
+                  />
+                  <p className="ml-2">{item.name}</p>
+                </div>
+              </Link>
+            )
+          }
+        })}
       </div>
     </div>
   )

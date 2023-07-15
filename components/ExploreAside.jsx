@@ -5,10 +5,10 @@ import Explorer from "./aside/Explorer"
 
 export default function ExploreAside() {
   return (
-    <aside className="w-[290px] h-screen bg-nav ">
+    <aside className="h-screen w-[290px] bg-nav ">
       <Explorer />
-      <div className="bg-navDark pl-5 mb-4">
-        <h6 className="font-bold text-sm text-[#818ca6] ">
+      <div className="mb-4 bg-navDark py-2 pl-5">
+        <h6 className="text-sm font-bold text-[#818ca6] ">
           remcostoeten portfolio
         </h6>
       </div>

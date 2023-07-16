@@ -18,8 +18,8 @@ const menuLinks = [
     ],
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: "Todo list ",
+    path: "/todo",
     icon: "css_icon.svg",
   },
   {

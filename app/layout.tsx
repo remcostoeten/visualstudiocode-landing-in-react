@@ -53,7 +53,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   <Tabsbar />
                   <main className="h-[85vh] flex-1 p-2">{children}</main>
                 </div>
-                <div className="flex-1">{children}</div>
               </div>
             </body>
           </html>

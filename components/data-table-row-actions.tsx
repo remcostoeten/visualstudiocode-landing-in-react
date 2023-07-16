@@ -3,8 +3,9 @@
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { Row } from "@tanstack/react-table"
 
-import { labels } from "../data/data"
-import { taskSchema } from "../data/schema"
+import { labels } from "@/app/table/data/data"
+import { taskSchema } from "@/app/table/data/schema"
+
 import { Button } from "./ui/button"
 import {
   DropdownMenu,

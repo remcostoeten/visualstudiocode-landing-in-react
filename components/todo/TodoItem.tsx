@@ -2,9 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
-
-import slides from "@/components/slides"
-import useLightbox from "@/components/useLightbox"
+import image from "next/image"
 
 type TodoItemProps = {
   id: string
@@ -33,7 +31,7 @@ export function TodoItem({
   useEffect(() => {
     if (image) {
       setImageUrl(
-        `data:image/jpeg;base64,${Buffer.from(image.data).toString("base64")}`
+        `data:image/jpeg;base64,${Buffer.from(image).toString("base64")}`
       )
     }
   }, [image])

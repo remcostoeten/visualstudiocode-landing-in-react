@@ -11,6 +11,9 @@ async function createTodo(data: FormData) {
   const category = data.get("category")?.valueOf()
   const description = data.get("description")?.valueOf()
 
+  const imageFile = data.get("image") as File
+  const image = await imageFile.arrayBuffer()
+
   if (typeof title !== "string" || title.length === 0) {
     throw new Error("Invalid Title")
   }
@@ -22,6 +25,7 @@ async function createTodo(data: FormData) {
       price: typeof price === "number" ? parseFloat(price) : 0, //Defeating to 0 if price is not provided
       category: typeof category === "string" ? category : "",
       description: typeof description === "string" ? description : "",
+      image: new Uint8Array(image),
     },
   })
   redirect("/")
@@ -51,6 +55,12 @@ export default function Page() {
         </select>
         <textarea
           name="description"
+          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
+        />
+        <input
+          type="file"
+          name="image"
+          accept="image/*"
           className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
         />
         <div className="flex gap-1 justify-end">

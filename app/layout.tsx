@@ -7,7 +7,6 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import Cursor from "@/components/cursor"
 import ActionsBar from "@/components/header/ActionsBar"
-import { SiteHeader } from "@/components/site-header"
 
 import ExploreAside from "./../components/ExploreAside"
 import Sidebar from "./../components/Sidebar"
@@ -44,7 +43,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               )}
             >
               <Cursor />
-              <SiteHeader />
               <ActionsBar />
               <div className="relative flex min-h-screen bg-body">
                 <div className="flex">

@@ -25,7 +25,7 @@ export default function NotFound() {
           a
           <p className="output">
             Please try to{" "}
-            <Link href="#" onClick={goBack}>
+            <Link href="/" onClick={goBack}>
               go back
             </Link>{" "}
             or <Link href="/">return to the homepage</Link>.

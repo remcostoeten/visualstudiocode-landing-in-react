@@ -55,6 +55,7 @@ const Tabsbar = () => {
               filename={item.name}
               path={item.path ? item.path : "no-path"}
               key={item.name}
+              target={item.target}
             />
           )
         }

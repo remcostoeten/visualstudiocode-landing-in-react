@@ -1,7 +1,15 @@
 "use client"
 
+import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { ClerkProvider, SignIn, SignedOut, useUser } from "@clerk/nextjs"
+import {
+  ClerkProvider,
+  SignIn,
+  SignedOut,
+  UserButton,
+  UserProfile,
+  useUser,
+} from "@clerk/nextjs"
 
 import {
   Menubar,
@@ -84,6 +92,12 @@ export default function ActionsBar() {
             <MenubarContent>
               <MenubarItem>
                 <SignIn />
+              </MenubarItem>
+              <MenubarItem>
+                <UserButton />
+              </MenubarItem>
+              <MenubarItem>
+                <Link href="/my-account">My account</Link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu>

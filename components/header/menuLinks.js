@@ -29,7 +29,8 @@ const menuLinks = [
   },
   {
     name: "Articles",
-    path: "/articles",
+    path: "https://snippets.remcostoeten.com",
+    target: "_blank",
     icon: "json_icon.svg",
   },
   {

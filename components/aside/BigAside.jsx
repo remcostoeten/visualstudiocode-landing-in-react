@@ -72,7 +72,7 @@ const BigAside = () => {
             )
           } else {
             return (
-              <Link href={item.path} key={item.name}>
+              <Link href={item.path} key={item.name} target="{item.target}">
                 <div className={styles.file}>
                   <Image
                     src={`/${item.icon}`}

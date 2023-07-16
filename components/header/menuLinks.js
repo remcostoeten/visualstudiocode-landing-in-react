@@ -36,7 +36,7 @@ const menuLinks = [
 
   {
     name: "Kanban board",
-    path: "/",
+    path: "https://kanban.remcostoeten.com",
     icon: "react_icon.svg",
   },
   {

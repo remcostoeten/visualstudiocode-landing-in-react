@@ -30,14 +30,14 @@
 }
 
 .file {
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 2rem;
   display: flex;
   align-items: center;
   font-size: 0.875rem;
 }
 
 .file p {
-  margin-left: 5px;
+  margin-left: 12px;
 }
 
 .file:hover {

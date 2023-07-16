@@ -4,15 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "preview": "next build && next start",
-    "typecheck": "tsc --noEmit",
-    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
-  },
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "predeploy": "npm run prisma:push && npm run prisma:generate",
+    "deploy": "npm run build"
+  },  
   "dependencies": {
     "@clerk/nextjs": "^4.21.15",
     "@hookform/resolvers": "^3.1.1",

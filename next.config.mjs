@@ -6,5 +6,3 @@ const nextConfig = {
     serverActions: true,
   },
 }
-
-export default nextConfig

@@ -17,7 +17,8 @@ model Todo {
   price       Float
   category    String
   description String
+  url         String
+  image       Bytes?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  image       Bytes?
 }

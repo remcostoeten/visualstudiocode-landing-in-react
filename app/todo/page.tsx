@@ -27,7 +27,12 @@ export default async function Home() {
       </Link>
       <ul className="pl-4">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
+          <TodoItem
+            image={todo.image}
+            key={todo.id}
+            {...todo}
+            toggleTodo={toggleTodo}
+          />
         ))}
       </ul>
     </>

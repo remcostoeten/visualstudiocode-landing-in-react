@@ -1,7 +1,6 @@
 .cursor {
   width: 40px;
   height: 40px;
-  border: 2px solid #fefefe;
   border-radius: 100%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -10,11 +9,14 @@
 }
 
 * {
-  cursor: none;
+  cursor: none !important;
+}
+
+button {
+  cursor: none !important;
 }
 
 .cursor--hidden {
-  opacity: 0;
 }
 
 .cursor-circle-bg {

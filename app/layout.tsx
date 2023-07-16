@@ -46,7 +46,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <ActionsBar />
               <div className="relative flex min-h-screen bg-body">
                 <div className="flex">
-                  <Sidebar />
+                  {/* <Sidebar /> */}
                   <ExploreAside />
                 </div>
                 <div style={{ width: "100%" }}>

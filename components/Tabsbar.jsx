@@ -11,14 +11,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import styles from "@/styles/modules/Tabsbar.module.css"
 
 import Tab from "./Tab"
 import menuLinks from "./header/menuLinks"
 
 const Tabsbar = () => {
   return (
-    <div className="flex w-screen bg-[#191a21]">
+    <div
+      className="flex w-screen bg-[#191a21]"
+      showhand="true"
+      hidecircel="true"
+    >
       {menuLinks.map((item) => {
         if (item.isDropdown) {
           return (
@@ -33,14 +36,18 @@ const Tabsbar = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 {item.dropdownItems.map((dropdownItem) => (
-                  <DropdownMenuItem key={dropdownItem.name}>
+                  <DropdownMenuItem
+                    key={dropdownItem.name}
+                    howhand="true"
+                    hidecircel="true"
+                  >
                     {dropdownItem.path ? (
                       <Link href={dropdownItem.path}>
                         <p>{dropdownItem.name}</p>
                       </Link>
                     ) : (
                       <span>
-                        <p>{dropdownItem.name}</p>
+                        <p showhand="true" hidecircel="true"></p>
                       </span>
                     )}
                   </DropdownMenuItem>

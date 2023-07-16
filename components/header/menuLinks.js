@@ -18,17 +18,12 @@ const menuLinks = [
     ],
   },
   {
-    name: "Todo list ",
-    path: "/todo",
-    icon: "css_icon.svg",
-  },
-  {
     name: "Projects",
     path: "/projects",
     icon: "js_icon.svg",
   },
   {
-    name: "Articles",
+    name: "Personal snippets",
     path: "https://snippets.remcostoeten.com",
     target: "_blank",
     icon: "json_icon.svg",
@@ -37,6 +32,17 @@ const menuLinks = [
     name: "GitHub",
     path: "/github",
     icon: "markdown_icon.svg",
+  },
+
+  {
+    name: "Kanban board",
+    path: "/",
+    icon: "react_icon.svg",
+  },
+  {
+    name: "Todo ",
+    path: "/todo",
+    icon: "css_icon.svg",
   },
 ]
 

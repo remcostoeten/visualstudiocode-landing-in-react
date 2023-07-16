@@ -9,8 +9,13 @@
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "predeploy": "npm run prisma:push && npm run prisma:generate",
-    "deploy": "npm run build"
-  },
+    "deploy": "npm run build",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "preview": "next build && next start",
+    "typecheck": "tsc --noEmit",
+    "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"  },
   "dependencies": {
     "@clerk/nextjs": "^4.21.15",
     "@hookform/resolvers": "^3.1.1",

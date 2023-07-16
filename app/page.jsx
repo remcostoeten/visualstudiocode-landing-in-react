@@ -14,7 +14,7 @@ export default function HomePage() {
         <div className={styles.container}>
           <div className={styles.background}>
             <h1>Aspiring to be more</h1>
-            <h1>than a "divjesschuiver"</h1>
+            <h1>than a divjesschuiver</h1>
           </div>
           <div className={styles.foreground}>
             <div className={styles.content}>

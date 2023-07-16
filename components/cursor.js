@@ -68,7 +68,7 @@ export default function Cursor() {
       document.removeEventListener("mousedown", onMouseDown)
       document.removeEventListener("mouseup", onMouseUp)
     }
-  }, [])
+  }, [setCursorSize])
 
   return (
     <div

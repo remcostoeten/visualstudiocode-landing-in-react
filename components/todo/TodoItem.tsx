@@ -51,11 +51,11 @@ export function TodoItem({
         <p>{description}</p>
         <span onClick={increaseImage}>Show image</span>
         {enlargeImage && (
-          <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="fixed inset-0 z-10 overflow-y-auto">
             {imageUrl && (
-              <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+              <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
                 <span
-                  className="z-max absolute right-0 top-0  bg-white text-black flex items-center"
+                  className="z-max absolute right-0 top-0  flex items-center bg-white text-black"
                   onClick={decreaseImage}
                 >
                   Close

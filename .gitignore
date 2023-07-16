@@ -132,3 +132,5 @@ dist
 # Local Netlify folder
 .netlify
 prisma/dev.db
+
+*.db

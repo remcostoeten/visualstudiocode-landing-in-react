@@ -1,5 +1,5 @@
-import LoadingAnimation from "../components/LoadingAnimation"
+import Loader from "./../components/loader"
 
 export default function Loading() {
-  return <LoadingAnimation />
+  return <Loader />
 }

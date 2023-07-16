@@ -4,10 +4,21 @@ type TodoItemProps = {
   id: string
   title: string
   complete: boolean
+  price: number
+  category: string
+  description: string
   toggleTodo: (id: string, complete: boolean) => void
 }
 
-export function TodoItem({ id, title, complete, toggleTodo }: TodoItemProps) {
+export function TodoItem({
+  id,
+  title,
+  complete,
+  price,
+  category,
+  description,
+  toggleTodo,
+}: TodoItemProps) {
   return (
     <li className="flex gap-1 items-center">
       <input
@@ -23,6 +34,9 @@ export function TodoItem({ id, title, complete, toggleTodo }: TodoItemProps) {
       >
         {title}
       </label>
+      <span>{price}</span>
+      <span>{category}</span>
+      <span>{description}</span>
     </li>
   )
 }

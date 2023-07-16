@@ -32,7 +32,7 @@ const BigAside = () => {
       <label
         htmlFor="portfolio-checkbox"
         className={styles.heading}
-        cursorIncreaseSize="true"
+        cursorincreasesize="true"
       >
         <ChevronRight
           className="mr-1 transition-transform duration-200"

@@ -7,7 +7,6 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: width 333ms ease, height 333ms ease-in-out;
-  mix-blend-mode: difference;
 }
 
 * {
@@ -16,4 +15,8 @@
 
 .cursor--hidden {
   opacity: 0;
+}
+
+.cursor-circle-bg {
+  mix-blend-mode: normal;
 }

@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { UserButton } from "@clerk/nextjs"
 import { Prisma } from "@prisma/client"
 
 import Illustration from "../components/icons/Illustrations"

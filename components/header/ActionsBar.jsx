@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { SignIn, UserButton } from "@clerk/nextjs"
+// import { SignIn, UserButton } from "@clerk/nextjs"
 import { useForm } from "react-hook-form"
 
 import { Button } from "@/components/ui/button"
@@ -113,12 +113,8 @@ export default function ActionsBar() {
               Sign in
             </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>
-                <SignIn />
-              </MenubarItem>
-              <MenubarItem>
-                <UserButton />
-              </MenubarItem>
+              <MenubarItem>{/* <SignIn /> */}</MenubarItem>
+              <MenubarItem>{/* <UserButton /> */}</MenubarItem>
               <MenubarItem>
                 <Link href="/my-account">My account</Link>
               </MenubarItem>

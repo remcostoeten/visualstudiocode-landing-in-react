@@ -18,6 +18,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@antfu/ni": "^0.21.4",
+    "@babel/preset-typescript": "^7.22.5",
     "@hookform/resolvers": "^3.1.1",
     "@prisma/client": "^5.0.0",
     "@radix-ui/colors": "^1.0.0",
@@ -46,6 +48,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
     "sass": "^1.63.6",
+    "shadcn-ui": "^0.3.0",
     "tailwind-merge": "^1.13.2",
     "tailwindcss-animate": "^1.0.6",
     "zod": "^3.21.4"

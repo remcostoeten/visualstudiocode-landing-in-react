@@ -2,6 +2,10 @@ import Link from "next/link"
 import { redirect } from "next/navigation"
 
 import { prisma } from "@/lib/db"
+import { Button } from "@/components/ui/button"
+import { Form } from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 async function createTodo(data) {
   "use server"
@@ -23,11 +27,11 @@ async function createTodo(data) {
     data: {
       title,
       complete: false,
-      price: typeof price === "number" ? parseFloat(price) : 0, //Defaulting to 0 if price is not provided
+      price: typeof price === "number" ? parseFloat(price) : 0,
       category: typeof category === "string" ? category : "",
       description: typeof description === "string" ? description : "",
       image: new Uint8Array(image),
-      url: typeof url === "string" ? url : "", // added the url field
+      url: typeof url === "string" ? url : "",
     },
   })
   redirect("/")
@@ -35,55 +39,24 @@ async function createTodo(data) {
 
 export default function Page() {
   return (
-    <>
-      <form action={createTodo} className="flex max-w-[50%] flex-col gap-2">
-        <input
-          type="text"
-          name="title"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <input
-          type="number"
-          name="price"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <select
-          name="category"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
+    <Form action={createTodo} className="flex max-w-[50%] flex-col gap-2">
+      <Input type="text" name="title" placeholder="Title" />
+      <Input type="number" name="price" placeholder="Price" />
+      <Input type="text" name="url" placeholder="URL" />
+      <div className="flex justify-end gap-1">
+        <Link
+          href=".."
+          className="rounded border border-slate-300 px-2 py-1 text-slate-300 outline-none focus-within:bg-slate-700 hover:bg-slate-700"
         >
-          <option value="">Select category</option>
-          <option value="category1">Category 1</option>
-          <option value="category2">Category 2</option>
-        </select>
-        <textarea
-          name="description"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <input
-          type="file"
-          name="image"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <input
-          type="text"
-          name="url"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <div className="flex justify-end gap-1">
-          <Link
-            href=".."
-            className="rounded border border-slate-300 px-2 py-1 text-slate-300 outline-none focus-within:bg-slate-700 hover:bg-slate-700"
-          >
-            Cancel
-          </Link>
-          <button
-            type="submit"
-            className="rounded border border-slate-300 px-2 py-1 text-slate-300 outline-none focus-within:bg-slate-700 hover:bg-slate-700"
-          >
-            Create
-          </button>
-        </div>
-      </form>
-    </>
+          Cancel
+        </Link>
+        <Button
+          type="submit"
+          className="rounded border border-slate-300 px-2 py-1 text-slate-300 outline-none focus-within:bg-slate-700 hover:bg-slate-700"
+        >
+          Create
+        </Button>
+      </div>
+    </Form>
   )
 }

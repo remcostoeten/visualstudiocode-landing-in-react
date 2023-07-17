@@ -10,6 +10,7 @@ async function createTodo(data) {
   const price = data.get("price")?.valueOf()
   const category = data.get("category")?.valueOf()
   const description = data.get("description")?.valueOf()
+  const url = data.get("url")?.valueOf() // added url field
 
   const imageFile = data.get("image")
   const image = await imageFile.arrayBuffer()
@@ -22,10 +23,11 @@ async function createTodo(data) {
     data: {
       title,
       complete: false,
-      price: typeof price === "number" ? parseFloat(price) : 0, //Defeating to 0 if price is not provided
+      price: typeof price === "number" ? parseFloat(price) : 0, //Defaulting to 0 if price is not provided
       category: typeof category === "string" ? category : "",
       description: typeof description === "string" ? description : "",
       image: new Uint8Array(image),
+      url: typeof url === "string" ? url : "", // added the url field
     },
   })
   redirect("/")
@@ -62,7 +64,11 @@ export default function Page() {
           name="image"
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
-
+        <input
+          type="text"
+          name="url"
+          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
+        />
         <div className="flex justify-end gap-1">
           <Link
             href=".."

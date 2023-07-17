@@ -71,20 +71,6 @@ export function TodoItem({
             Show Image
           </button>
         )}
-        {showImage && image && (
-          <div
-            className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-75"
-            onClick={handleHideImage}
-          >
-            <Image
-              src={imageUrl}
-              alt="Image"
-              width={600}
-              height={600}
-              onLoad={handleImageLoad}
-            />
-          </div>
-        )}
       </div>
     </li>
   )

@@ -65,11 +65,6 @@ export default function Page() {
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
         <Input
-          type="file"
-          name="image"
-          className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <Input
           type="text"
           name="url"
           placeholder="URL"

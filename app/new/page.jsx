@@ -2,6 +2,7 @@ import Link from "next/link"
 import { redirect } from "next/navigation"
 
 import { prisma } from "@/lib/db"
+import { Input } from "@/components/ui/input"
 
 async function createTodo(data) {
   "use server"
@@ -37,13 +38,16 @@ export default function Page() {
   return (
     <>
       <form action={createTodo} className="flex max-w-[50%] flex-col gap-2">
-        <input
+        <Input
           type="text"
           name="title"
+          placeholder="Title"
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
-        <input
+
+        <Input
           type="number"
+          placeholder="Price"
           name="price"
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
@@ -57,16 +61,18 @@ export default function Page() {
         </select>
         <textarea
           name="description"
+          placeholder="Description"
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
-        <input
+        <Input
           type="file"
           name="image"
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
-        <input
+        <Input
           type="text"
           name="url"
+          placeholder="URL"
           className="rounded border border-slate-300 bg-transparent px-2 py-1 outline-none focus-within:border-slate-100"
         />
         <div className="flex justify-end gap-1">

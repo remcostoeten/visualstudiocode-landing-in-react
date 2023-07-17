@@ -15,7 +15,6 @@ interface MainNavProps {
 export function MainNav({ items }: MainNavProps) {
   return (
     <div className="flex gap-6 md:gap-10">
-      <UserButton />
       <span className="inline-block font-bold">{siteConfig.name}</span>
       {items?.length ? (
         <nav className="flex gap-6">

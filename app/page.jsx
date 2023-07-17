@@ -21,7 +21,7 @@ export default function HomePage() {
                 Remco Stoeten
               </h1>
               <h6 className={styles.bio}>Creative front-end developer</h6>
-              <Link href="https://kanban.remcostoeten.com">
+              <Link href="https://kanban.remcostoeten.com" target="_blank">
                 <button
                   className={styles.button}
                   showhand="true"

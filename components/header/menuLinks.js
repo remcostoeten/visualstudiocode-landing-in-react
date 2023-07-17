@@ -18,8 +18,8 @@ const menuLinks = [
     ],
   },
   {
-    name: "Projects",
-    path: "/projects",
+    name: "Data",
+    path: "/table",
     icon: "js_icon.svg",
   },
   {

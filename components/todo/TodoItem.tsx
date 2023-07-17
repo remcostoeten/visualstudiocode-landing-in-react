@@ -1,8 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Image from "next/image"
-import image from "next/image"
 
 type TodoItemProps = {
   id: string
@@ -26,50 +25,67 @@ export function TodoItem({
   toggleTodo,
 }: TodoItemProps) {
   const [imageUrl, setImageUrl] = useState("")
-  const [enlargeImage, setEnlargeImage] = useState(false)
+  const [showImage, setShowImage] = useState(false)
 
-  useEffect(() => {
-    if (image) {
-      setImageUrl(
-        `data:image/jpeg;base64,${Buffer.from(image).toString("base64")}`
-      )
-    }
-  }, [image])
-
-  const increaseImage = () => {
-    setEnlargeImage(true)
+  const handleToggleTodo = () => {
+    toggleTodo(id, !complete)
   }
 
-  const decreaseImage = () => {
-    setEnlargeImage(false)
+  const handleShowImage = () => {
+    setShowImage(true)
+  }
+
+  const handleHideImage = () => {
+    setShowImage(false)
+  }
+
+  const handleImageLoad = () => {
+    if (image) {
+      const imageUrl = `data:image/jpeg;base64,${Buffer.from(image).toString(
+        "base64"
+      )}`
+      setImageUrl(imageUrl)
+    }
   }
 
   return (
-    <li key={id}>
+    <li className="border border-gray-200 rounded-md p-4 mb-2 bg-pink-50 flex flex-col items-start">
       <div>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <span onClick={increaseImage}>Show image</span>
-        {enlargeImage && (
-          <div className="fixed inset-0 z-10 overflow-y-auto">
-            {imageUrl && (
-              <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
-                <span
-                  className="z-max absolute right-0 top-0  flex items-center bg-white text-black"
-                  onClick={decreaseImage}
-                >
-                  Close
-                </span>
-
-                <Image src={imageUrl} width={600} height={600} alt={""} />
-              </div>
-            )}
+        <h2 className="text-2xl font-semibold">{title}</h2>
+        <p className="mt-2 text-gray-700">{description}</p>
+        <button
+          onClick={handleToggleTodo}
+          className={`mt-4 py-2 px-4 border rounded-md ${
+            complete
+              ? "border-green-500 text-green-500"
+              : "border-red-500 text-red-500"
+          }`}
+        >
+          {complete ? "Undo" : "Complete"}
+        </button>
+        {image && (
+          <button
+            onClick={handleShowImage}
+            className="mt-2 py-1 px-3 border rounded-md bg-blue-500 text-white"
+          >
+            Show Image
+          </button>
+        )}
+        {showImage && image && (
+          <div
+            className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-75"
+            onClick={handleHideImage}
+          >
+            <Image
+              src={imageUrl}
+              alt="Image"
+              width={600}
+              height={600}
+              onLoad={handleImageLoad}
+            />
           </div>
         )}
       </div>
-      <button onClick={() => toggleTodo(id, !complete)}>
-        {complete ? "Undo" : "Complete"}
-      </button>
     </li>
   )
 }

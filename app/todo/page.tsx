@@ -17,19 +17,22 @@ export default async function Home() {
   const todos = await getTodos()
 
   return (
-    <>
-      <h1 className="text-2xl">Todos</h1>
+    <div className="flex flex-col  min-h-screen py-2">
+      <div className="text-3xl font-semibold text-gray-700">Todos</div>
       <Link
-        className="rounded border border-slate-300 px-2 py-1 text-slate-300 outline-none focus-within:bg-slate-700 hover:bg-slate-700"
+        className="inline-block w-[100px] rounded-md border border-blue-500 px-4 py-2 text-blue-500 mt-4 transition-all hover:bg-blue-500 hover:text-white focus:outline-none"
         href="/new"
       >
-        New
+        {" "}
+        New{" "}
       </Link>
-      <ul className="pl-4">
+      <ul className="space-y-4">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} toggleTodo={toggleTodo} />
+          <li key={todo.id}>
+            <TodoItem {...todo} toggleTodo={toggleTodo} />
+          </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }

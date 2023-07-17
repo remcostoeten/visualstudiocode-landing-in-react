@@ -30,11 +30,7 @@ export default function HomePage() {
                   View kanban
                 </button>
               </Link>
-              <Link href="/contact">
-                <button className={styles.outlined}>Contact Me</button>
-              </Link>
             </div>
-            <Illustration className={styles.illustration} />
           </div>
         </div>
       </div>

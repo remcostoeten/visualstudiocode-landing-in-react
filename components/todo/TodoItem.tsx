@@ -1,8 +1,3 @@
-"use client"
-
-import React, { useState } from "react"
-import Image from "next/image"
-
 type TodoItemProps = {
   id: string
   title: string
@@ -18,34 +13,12 @@ export function TodoItem({
   id,
   title,
   complete,
-  price,
-  category,
+
   description,
-  image,
   toggleTodo,
 }: TodoItemProps) {
-  const [imageUrl, setImageUrl] = useState("")
-  const [showImage, setShowImage] = useState(false)
-
   const handleToggleTodo = () => {
     toggleTodo(id, !complete)
-  }
-
-  const handleShowImage = () => {
-    setShowImage(true)
-  }
-
-  const handleHideImage = () => {
-    setShowImage(false)
-  }
-
-  const handleImageLoad = () => {
-    if (image) {
-      const imageUrl = `data:image/jpeg;base64,${Buffer.from(image).toString(
-        "base64"
-      )}`
-      setImageUrl(imageUrl)
-    }
   }
 
   return (
@@ -63,28 +36,6 @@ export function TodoItem({
         >
           {complete ? "Undo" : "Complete"}
         </button>
-        {image && (
-          <button
-            onClick={handleShowImage}
-            className="mt-2 py-1 px-3 border rounded-md bg-blue-500 text-white"
-          >
-            Show Image
-          </button>
-        )}
-        {showImage && image && (
-          <div
-            className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-75"
-            onClick={handleHideImage}
-          >
-            <Image
-              src={imageUrl}
-              alt="Image"
-              width={600}
-              height={600}
-              onLoad={handleImageLoad}
-            />
-          </div>
-        )}
       </div>
     </li>
   )

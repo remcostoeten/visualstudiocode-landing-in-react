@@ -20,7 +20,7 @@ export default async function Home() {
     <div className="flex flex-col  min-h-screen py-2">
       <div className="text-3xl font-semibold text-gray-700">Todos</div>
       <Link
-        className="inline-block w-[100px] rounded-md border border-blue-500 px-4 py-2 text-blue-500 mt-4 transition-all hover:bg-blue-500 hover:text-white focus:outline-none"
+        className="inline-block  w-[100px] rounded-md border border-blue-500 px-4 py-2 text-blue-500 mt-4 transition-all hover:bg-blue-500 hover:text-white focus:outline-none"
         href="/new"
       >
         {" "}

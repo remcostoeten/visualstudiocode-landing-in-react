@@ -1,0 +1,14 @@
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cursor {
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: blink 1s infinite;
+}

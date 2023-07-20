@@ -50,6 +50,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
+    "react-type-animation": "^3.1.0",
+    "react-typewriter-effect": "^1.1.0",
     "sass": "^1.63.6",
     "shadcn-ui": "^0.3.0",
     "tailwind-merge": "^1.13.2",

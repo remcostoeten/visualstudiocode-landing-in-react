@@ -2,7 +2,6 @@ import React, { useState } from "react"
 
 import Extract from "./Extract"
 import Terminal from "./Terminal"
-import { Terminal } from '@/components/terminal';
 
 export default function MainComponent() {
   const [inputValue, setInputValue] = useState("")

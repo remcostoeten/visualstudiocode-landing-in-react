@@ -6,6 +6,7 @@
 @import "./lib/resize.scss";
 @import "./components/cursor.scss";
 @import "./components/loader.scss";
+@import "./utils/animations.scss";
 
 @tailwind base;
 @tailwind components;
@@ -81,7 +82,9 @@ html {
 
     --radius: 0.5rem;
   }
-
+  .will-change-transform {
+    will-change: transform;
+  }
   .dark {
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;

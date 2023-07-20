@@ -21,6 +21,7 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        blackchad: "#09090b",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -71,6 +72,20 @@ module.exports = {
         cursor: "100%",
       },
       keyframes: {
+        type: {
+          "0%": { width: "0ch" },
+          "5%, 10%": { width: "1ch" },
+          "15%, 20%": { width: "2ch" },
+          "25%, 30%": { width: "3ch" },
+          "35%, 40%": { width: "4ch" },
+          "45%, 50%": { width: "5ch" },
+          "55%, 60%": { width: "6ch" },
+          "65%, 70%": { width: "7ch" },
+          "75%, 80%": { width: "8ch" },
+          "85%, 90%": { width: "9ch" },
+          "95%": { width: "10ch" },
+        },
+
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -131,6 +146,7 @@ module.exports = {
         themeblue: "#2e304b",
         themered: "#fd8e8e",
         offblack: "#111215",
+        blackchad: "#09090b",
         cursor: "#ffffff",
         offwhite: "#ebecf3",
         themegreen: "#0aff9d",

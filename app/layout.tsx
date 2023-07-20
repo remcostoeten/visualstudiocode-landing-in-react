@@ -52,7 +52,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
               <div style={{ width: "100%" }}>
                 <Tabsbar />
-                <main className="h-[85vh] flex-1 p-2">{children}</main>
+                <main className="h-[85vh] max-w-max flex-1 p-2">
+                  {children}
+                </main>
               </div>
             </div>
           </body>

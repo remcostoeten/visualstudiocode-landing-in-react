@@ -15,6 +15,11 @@ const menuLinks = [
         path: "/cursor",
         icon: "html_icon.svg",
       },
+      {
+        name: "URL extract",
+        path: "/url-extract",
+        icon: "html_icon.svg",
+      },
     ],
   },
   {

@@ -1,0 +1,7 @@
+{
+  "databaseURL": "https://Remco-s-workspace-jq8rds.eu-central-1.xata.sh/db/remcostoeten-portfolio-IDE",
+  "codegen": {
+    "output": "app/xata.js",
+    "moduleType": "esm"
+  }
+}

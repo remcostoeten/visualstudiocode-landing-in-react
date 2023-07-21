@@ -20,12 +20,22 @@ const menuLinks = [
         path: "/url",
         icon: "html_icon.svg",
       },
+      {
+        name: "new incomee",
+        path: "/new/expenses",
+        icon: "html_icon.svg",
+      },
     ],
   },
   {
     name: "Data",
     path: "/table",
     icon: "js_icon.svg",
+  },
+  {
+    name: "Expenses",
+    path: "/expenses",
+    icon: "html_icon.svg",
   },
   {
     name: "Personal snippets",

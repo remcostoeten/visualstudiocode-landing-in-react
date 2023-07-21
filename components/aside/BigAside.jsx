@@ -44,7 +44,7 @@ const BigAside = () => {
         className={styles.files}
         style={portfolioOpen ? { display: "block" } : { display: "none" }}
       >
-        {menuLinks.slice(0, menuLinks.length - 2).map((item) => {
+        {menuLinks.slice(0, menuLinks.length - 5).map((item) => {
           if (item.isDropdown) {
             return (
               <DropdownMenu key={item.name}>
@@ -115,7 +115,7 @@ const BigAside = () => {
         />
         Features
       </label>
-      {menuLinks.slice(5).map((item) => {
+      {menuLinks.slice(6).map((item) => {
         if (item.isDropdown) {
           return (
             <DropdownMenu key={item.name}>

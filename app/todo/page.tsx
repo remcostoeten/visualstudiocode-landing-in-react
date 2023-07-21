@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { prisma } from "@/lib/db"
+import Toast from "@/components/Toast"
 import { TodoItem } from "@/components/todo/TodoItem"
 
 function getTodos() {
@@ -33,6 +34,7 @@ export default async function Home() {
           </li>
         ))}
       </ul>
+      <Toast message="Far from done. Only prototyping the database. 🪄" />
     </div>
   )
 }

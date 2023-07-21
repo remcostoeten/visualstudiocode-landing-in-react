@@ -14,7 +14,6 @@ async function createTodo(data) {
   const url = data.get("url")?.valueOf() // added url field
 
   const imageFile = data.get("image")
-  const image = await imageFile.arrayBuffer()
 
   if (typeof title !== "string" || title.length === 0) {
     throw new Error("Invalid Title")
@@ -27,7 +26,6 @@ async function createTodo(data) {
       price: typeof price === "number" ? parseFloat(price) : 0, //Defaulting to 0 if price is not provided
       category: typeof category === "string" ? category : "",
       description: typeof description === "string" ? description : "",
-      image: new Uint8Array(image),
       url: typeof url === "string" ? url : "", // added the url field
     },
   })

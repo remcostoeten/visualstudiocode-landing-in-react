@@ -59,6 +59,7 @@ const menuLinks = [
   },
   {
     name: "URL extractor - WiP",
+    target: "_self",
     path: "/url",
     icon: "vscode_icon.svg",
   },
@@ -71,10 +72,12 @@ const menuLinks = [
     name: "Todo - MySQL - WiP ",
     path: "/todo",
     icon: "css_icon.svg",
+    target: "_self",
   },
   {
     name: "Expenses - MySQL - WiP ",
     path: "/expenses",
+    target: "_self",
     icon: "html_icon.svg",
   },
 ]

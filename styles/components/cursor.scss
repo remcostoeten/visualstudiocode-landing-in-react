@@ -8,6 +8,20 @@
   transition: width 333ms ease, height 333ms ease-in-out;
 }
 
+@keyframes blinkingCursor {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-blinking-cursor {
+  animation: blinkingCursor 1s infinite;
+}
+
 * {
   cursor: none !important;
 }

@@ -86,6 +86,7 @@ export default function Cursor() {
         willChange: "transform",
         transitionTimingFunction: "cubic-bezier(.33,.28,0,1.14)",
         zIndex: 10,
+        zIndex: 1000,
         mixBlendMode: showHand ? "normal" : "difference",
         pointerEvents: "none",
       }}

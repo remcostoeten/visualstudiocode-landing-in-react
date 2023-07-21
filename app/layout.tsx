@@ -10,7 +10,6 @@ import Cursor from "@/components/cursor"
 import ActionsBar from "@/components/header/ActionsBar"
 
 import ExploreAside from "./../components/ExploreAside"
-import Sidebar from "./../components/Sidebar"
 import Tabsbar from "./../components/Tabsbar"
 import { CursorProvider } from "./../lib/CursorContext"
 

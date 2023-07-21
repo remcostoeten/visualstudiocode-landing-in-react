@@ -17,7 +17,7 @@ const menuLinks = [
       },
       {
         name: "URL extract",
-        path: "/url-extract",
+        path: "/url",
         icon: "html_icon.svg",
       },
     ],

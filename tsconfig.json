@@ -39,7 +39,8 @@
     "app/page.jsx",
     "app/new/page.jsx",
     "app/todo/page.tsx",
-    "app/my-account/page.jsx"
+    "app/my-account/page.jsx",
+    "app/url/layout.jsx"
   ],
   "exclude": [
     "node_modules"

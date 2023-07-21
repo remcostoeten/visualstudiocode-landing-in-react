@@ -4,3 +4,5 @@ export const removeAllExceptCharacter = (text, character) => {
   const newText = filteredLines.join("\n")
   return newText
 }
+
+export const blinkingCursorStyles = {}

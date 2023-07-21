@@ -21,19 +21,10 @@ function getExpenses() {
   return prisma.expense.findMany()
 }
 
-function deleteExpense() {
-  return prisma.expense.delete({
-    where: {
-      id: 1,
-    },
-  })
-}
-
 export default async function Home() {
   const data = await getIncome()
   const expenses = await getExpenses()
 
-  // Calculate the total expense
   const totalExpense = expenses.reduce((total, entry) => total + entry.cost, 0)
 
   return (
@@ -77,7 +68,7 @@ export default async function Home() {
             </TableHeader>
           </TableBody>
         </Table>
-      </div>{" "}
+      </div>
     </>
   )
 }

@@ -6,7 +6,7 @@ import { Row } from "@tanstack/react-table"
 import { labels } from "@/app/table/data/data"
 import { taskSchema } from "@/app/table/data/schema"
 
-import { Button } from "./ui/button"
+import { Button } from "./button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +19,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu"
+} from "./dropdown-menu"
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>

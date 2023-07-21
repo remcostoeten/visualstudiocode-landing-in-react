@@ -4,8 +4,8 @@ import { Column } from "@tanstack/react-table"
 
 import { cn } from "@/lib/utils"
 
-import { Badge } from "./ui/badge"
-import { Button } from "./ui/button"
+import { Badge } from "./badge"
+import { Button } from "./button"
 import {
   Command,
   CommandEmpty,
@@ -13,9 +13,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "./ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
-import { Separator } from "./ui/separator"
+} from "./command"
+import { Popover, PopoverContent, PopoverTrigger } from "./popover"
+import { Separator } from "./separator"
 
 interface DataTableFacetedFilter<TData, TValue> {
   column?: Column<TData, TValue>

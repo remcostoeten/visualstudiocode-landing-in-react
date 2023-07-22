@@ -13,17 +13,20 @@ const menuLinks = [
       {
         name: "Cursor",
         path: "/cursor",
+        target: "_self",
         icon: "html_icon.svg",
       },
       {
         name: "URL extract",
         path: "/url",
         icon: "html_icon.svg",
+        target: "_self",
       },
       {
         name: "new incomee",
         path: "/new/expenses",
         icon: "html_icon.svg",
+        target: "_self",
       },
     ],
   },

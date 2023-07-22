@@ -30,7 +30,8 @@ model Income {
 }
 
 model Expense {
-  id   String @id @default(uuid())
-  name String
-  cost Int
+  id       String @id @default(uuid())
+  name     String
+  cost     Int
+  category String // newly added field
 }

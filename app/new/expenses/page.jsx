@@ -17,7 +17,6 @@ async function createIncome(data) {
       income,
     },
   })
-
   redirect("/expenses")
 }
 

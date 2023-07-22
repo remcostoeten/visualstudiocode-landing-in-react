@@ -7,6 +7,7 @@ import {
   TableBody,
   TableCaption,
   TableCell,
+  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -53,29 +54,35 @@ export default async function Home() {
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Item</TableHead>
-              <TableHead>Prijs</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
+              <TableHead>Categorie</TableHead>
+              <TableHead className="text-right">Prijs</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {expenses.map((entry) => (
-              <>
-                <TableRow key={entry.id}>
-                  <TableCell className="font-medium">{entry.item}</TableCell>
-                  <TableCell>Paid</TableCell>
-                  <TableCell className="text-right">€{entry.cost}</TableCell>
-                </TableRow>
-                <TrashIcon />
-              </>
-            ))}
-            <TableHeader>
-              <TableRow>
-                <TableHead>Total</TableHead>
-                <TableHead className="text-right">€{totalExpense}</TableHead>
+              <TableRow key={entry.id}>
+                <TableCell className="font-medium">{entry.name}</TableCell>
+                <TableCell className="font-medium">{entry.category}</TableCell>
+                <TableCell className="text-right">€{entry.cost}</TableCell>
               </TableRow>
-            </TableHeader>
+            ))}
           </TableBody>
+          <TableFooter>
+            <TableRow className="border-t border-t-gray-800">
+              <TableHead>Total</TableHead>
+              <TableHead></TableHead>
+              <TableHead className="text-right">€{totalExpense}</TableHead>
+            </TableRow>
+            <TableRow className="border-t border-t-green-600">
+              <TableHead className="w-[100px]">Inkomen</TableHead>
+              <TableHead></TableHead>
+              <TableHead className="text-right">
+                {data.map((entry) => `€${entry.income}`)}
+              </TableHead>
+            </TableRow>
+          </TableFooter>{" "}
         </Table>
+
         <Toast message="Far from done. Only prototyping the database. 🪄" />
       </div>
     </>

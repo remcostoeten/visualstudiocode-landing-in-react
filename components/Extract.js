@@ -28,6 +28,7 @@ export default function MyComponent() {
     const newText = uniqueLines.join("\n")
     setText(newText)
     displayToast(`${lines.length - uniqueLines.length} duplicates removed`)
+    setRemoveDuplicates(true)
   }
 
   const increeaseNumUrlsToCopy = () => {

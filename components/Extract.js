@@ -21,6 +21,7 @@ export default function MyComponent() {
   const [toastMessage, setToastMessage] = useState("")
   const [hasText, setHasText] = useState(false)
   const [removeDuplicates, setRemoveDuplicates] = useState(false)
+  const [keepContaining, setKeepContaining] = useState(false)
 
   const removeDuplicatesFromResults = () => {
     const lines = text.split("\n")
@@ -107,12 +108,14 @@ export default function MyComponent() {
 
   const removeAllExceptCharacter = () => {
     const lines = text.split("\n")
-    const filteredLines = lines.filter((line) => line.includes(character))
+    const filteredLines = keepContaining
+      ? lines.filter((line) => line.includes(character)) // Step 3: Check keepContaining value
+      : lines.filter((line) => !line.includes(character)) // Step 3: Handle opposite scenario
+
     const newText = filteredLines.join("\n")
     setText(newText)
     displayToast(`${lines.length - filteredLines.length} lines removed`)
   }
-
   const copyContent = async () => {
     try {
       await navigator.clipboard.writeText(text)
@@ -166,7 +169,7 @@ export default function MyComponent() {
         <p className="flex-1 typing items-center pl-2 text-offgrey">
           Enter any character that the line should{" "}
           <strong>
-            <u>contain</u>
+            <u>{keepContaining ? "contain" : "not contain"}</u>
           </strong>{" "}
           that you want to{" "}
           <strong>
@@ -187,7 +190,9 @@ export default function MyComponent() {
         <div onClick={removeDuplicatesFromResults}>Remove All Duplicates</div>
         <div onClick={removeNonURLs}>Remove all text except URLs</div>
         <div onClick={removeAllExceptCharacter}>
-          Remove all lines except with character
+          {keepContaining
+            ? "Keep lines containing character"
+            : "Remove lines containing character"}
         </div>
       </div>
       <div className="mt-4 flex justify-between">

@@ -20,6 +20,15 @@ export default function MyComponent() {
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState("")
   const [hasText, setHasText] = useState(false)
+  const [removeDuplicates, setRemoveDuplicates] = useState(false)
+
+  const removeDuplicatesFromResults = () => {
+    const lines = text.split("\n")
+    const uniqueLines = Array.from(new Set(lines))
+    const newText = uniqueLines.join("\n")
+    setText(newText)
+    displayToast(`${lines.length - uniqueLines.length} duplicates removed`)
+  }
 
   const increeaseNumUrlsToCopy = () => {
     setNumUrlsToCopy(numUrlsToCopy + 1)
@@ -174,6 +183,7 @@ export default function MyComponent() {
         <div className="absolute left-0 top-[44px] h-5 w-0.5 bg-white animate-blink" />
       </div>
       <div className="flex mt-12 gap-2 flexxer">
+        <div onClick={removeDuplicatesFromResults}>Remove All Duplicates</div>
         <div onClick={removeNonURLs}>Remove all text except URLs</div>
         <div onClick={removeAllExceptCharacter}>
           Remove all lines except with character

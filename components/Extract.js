@@ -23,6 +23,10 @@ export default function MyComponent() {
   const [removeDuplicates, setRemoveDuplicates] = useState(false)
   const [keepContaining, setKeepContaining] = useState(false)
 
+  const handleToggle = () => {
+    setKeepContaining((prevValue) => !prevValue)
+  }
+
   const removeDuplicatesFromResults = () => {
     const lines = text.split("\n")
     const uniqueLines = Array.from(new Set(lines))
@@ -177,7 +181,23 @@ export default function MyComponent() {
           </strong>
           .
           <br />
-        </p>
+        </p>{" "}
+        <div className="flex mt-4 items-center">
+          <input
+            type="checkbox"
+            id="toggleKeepContaining"
+            checked={keepContaining}
+            onChange={handleToggle}
+          />
+          <label
+            htmlFor="toggleKeepContaining"
+            className="ml-2 text-offgrey cursor-pointer"
+          >
+            {keepContaining
+              ? "Keep lines containing character"
+              : "Remove lines containing character"}
+          </label>
+        </div>
         <Input
           type="text"
           className="custom bg-transparent z-max outline-none chars-keep-input top-5 border-0 absolute"

@@ -42,6 +42,7 @@
     "clsx": "^1.2.1",
     "cmdk": "^0.2.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "firebase": "^10.1.0",
     "framer-motion": "^10.12.22",
     "fs": "^0.0.1-security",
     "lucide-react": "^0.260.0",

@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig
 export const siteConfig = {
   name: "Remco Stoeten",
   description:
-    "Remcostoeten.com - Remco Stoeten, a dutch 26 year old front-end engineer based in Lemmer, the Netherlands. P",
+    "Remcostoeten.com - A abbandoned landing page which I built in the style off a IDE using NextJS app  router, TailwindCSS, ShadCN UI, and Typescript. This site is not maintained and is only used as a portfolio item.", 
   mainNav: [
     {
       title: "Home",
@@ -11,8 +11,7 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    github: "https://github.com/remcostoeten/remcostoeten-portfolio-IDE",
+    docs: "https://remcostoeten.com"
   },
 }
